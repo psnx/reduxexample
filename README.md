@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+The code was created based on this video: https://www.youtube.com/watch?v=93p3LxR9xfM. The only change I implemented is that I use `componentDidUpdate` instead of the deprecated `componentWillReceiveProps` lifecycle function.
+
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
