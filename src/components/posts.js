@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchPosts } from '../actions/postActions'
+import { fetchPosts } from '../actions/postActions';
 
 class Posts extends Component {
 
@@ -9,7 +9,7 @@ class Posts extends Component {
     this.props.fetchPosts();
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     console.log('prop received');
     if(nextProps.newPost) {
       console.log('prop received');
@@ -40,7 +40,7 @@ Posts.propTypes = {
   fetchPosts: PropTypes.func.isRequired,
   posts: PropTypes.array.isRequired,
   newPost: PropTypes.object
-}
+};
 
 const mapStateToProps = state => ({
   posts: state.posts.items,

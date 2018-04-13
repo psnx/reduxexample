@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createPost } from '../actions/postActions'
-import PropTypes from 'prop-types'
+import { createPost } from '../actions/postActions';
+import PropTypes from 'prop-types';
 
 class PostForm extends Component {
 constructor(props){
   super(props);
   this.state = {
       title: '',
-      body: ''
+      body: '',
+      userID: ''
   };
 
   this.onChange = this.onChange.bind(this);
@@ -24,12 +25,12 @@ onSubmit(e) {
 
   const post = {
     title: this.state.title,
-    body: this.state.body
-  }
+    body: this.state.body,
+    userID: this.state.userID
+  };
 
 this.props.createPost(post);
 }
-
 
   render() {
 
@@ -47,6 +48,11 @@ this.props.createPost(post);
                 <label>Body:</label><br/>
                 <textarea name = "body" onChange = {this.onChange}
                 value = {this.state.body} />
+            </div>
+            <div>
+                <label>userID:</label><br/>
+                <input type = "text" name = "userID" onChange = {this.onChange}
+                value = {this.state.userID} />
             </div>
             <br/>
             <button type = "submit">Submit</button>
